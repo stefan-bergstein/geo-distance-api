@@ -35,3 +35,21 @@ Run:
 ```
 podman run -it -p 8088:8080 geo-distance:latest
 ```
+
+## Build container image with OpenShift Pipelines
+
+### Create project/namespace
+```
+oc new-project geo-distance-api
+```
+
+### Deploy pipeline and start pipeline
+```
+oc apply -f manifests/geo-distance-pipeline.yaml
+oc create -f manifests/geo-distance-pipeline-run.yaml
+```
+
+### Start the API Service
+```
+oc apply -f manifests/geo-distance-deployment.yaml
+```
