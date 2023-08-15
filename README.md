@@ -16,7 +16,7 @@ pip install fastapi[all]
 
 ## Run locally
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ## Swagger / openapi.json
@@ -33,7 +33,7 @@ buildah build -t geo-distance:latest
 
 Run:
 ```
-podman run -it -p 8088:8080 geo-distance:latest
+podman run -it -p 8080:8080 geo-distance:latest
 ```
 
 ## Build container image with OpenShift Pipelines
