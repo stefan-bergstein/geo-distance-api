@@ -1,11 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geo-distance-component2
+  labels:
+    backstage.io/kubernetes-id: geo-distance-component
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: geo-distance-component2
+  template:
+    metadata:
+      labels:
+        app: geo-distance-component2
+        backstage.io/kubernetes-id: geo-distance-component
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu
+        command: 
+        - /bin/sh
+        args:
+        - -c
+        - "tail -f /dev/null"
 ---
 # Service geo-distance
 apiVersion: v1
 kind: Service
 metadata:
   name: geo-distance
-  annotations:
-    backstage.io/kubernetes-id: backstage-demo-app  
+  labels:
+    backstage.io/kubernetes-id: geo-distance-component  
 spec:
   selector:
     app: geo-distance
@@ -21,7 +46,7 @@ kind: Route
 metadata:
   name: geo-distance  
   labels:
-    backstage.io/kubernetes-id: my-kubernetes-component    
+    backstage.io/kubernetes-id: geo-distance-component    
 spec:
   port:
     targetPort: api 
@@ -35,7 +60,7 @@ kind: Deployment
 metadata:
   name: geo-distance 
   labels:
-    backstage.io/kubernetes-id: my-kubernetes-component    
+    backstage.io/kubernetes-id: geo-distance-component    
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
