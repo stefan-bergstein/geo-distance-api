@@ -6,7 +6,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-id: geo-distance-component    
   labels:
-    backstage.io/kubernetes-id: my-kubernetes-component    
+    backstage.io/kubernetes-id: geo-distance-component   
 spec:
   params:
   - default: geo-distance
