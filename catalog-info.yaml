@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-id: geo-distance-component
+  name: geo-distance-component
+spec:
+  lifecycle: development
+  owner: my-team
+  type: service

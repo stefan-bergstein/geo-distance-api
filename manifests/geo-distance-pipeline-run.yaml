@@ -6,7 +6,7 @@ metadata:
   generateName: geo-distance-pipeline-run-
   namespace: geo-distance-api
   annotations:
-    backstage.io/kubernetes-id: backstage-demo-app  
+    backstage.io/kubernetes-id: geo-distance-component  
   finalizers:
   - chains.tekton.dev/pipelinerun
 spec:

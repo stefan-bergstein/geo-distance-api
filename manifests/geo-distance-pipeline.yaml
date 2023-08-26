@@ -4,7 +4,7 @@ metadata:
   name: geo-distance-pipeline
   namespace: geo-distance-api
   annotations:
-    backstage.io/kubernetes-id: backstage-demo-app
+    backstage.io/kubernetes-id: geo-distance-component    
 spec:
   params:
   - default: geo-distance

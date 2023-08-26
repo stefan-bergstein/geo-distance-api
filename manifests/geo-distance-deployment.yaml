@@ -21,7 +21,7 @@ kind: Route
 metadata:
   name: geo-distance
   annotations:
-    backstage.io/kubernetes-id: backstage-demo-app  
+    backstage.io/kubernetes-id: geo-distance-component   
 spec:
   port:
     targetPort: api 
@@ -35,7 +35,7 @@ kind: Deployment
 metadata:
   name: geo-distance
   annotations:
-    backstage.io/kubernetes-id: backstage-demo-app  
+    backstage.io/kubernetes-id: geo-distance-component  
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -53,6 +53,8 @@ spec:
       creationTimestamp: null
       labels:
         app: geo-distance
+    annotations:
+      backstage.io/kubernetes-id: geo-distance-component          
     spec:
       containers:
       - image: geo-distance:0.1
