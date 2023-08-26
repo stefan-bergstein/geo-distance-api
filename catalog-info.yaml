@@ -3,6 +3,7 @@ kind: Component
 metadata:
   annotations:
     backstage.io/kubernetes-id: geo-distance-component
+    janus-idp.io/tekton-enabled : 'true'
   name: geo-distance-component
 spec:
   lifecycle: development
